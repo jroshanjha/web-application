@@ -20,8 +20,8 @@ def predict():
     # Make prediction
     prediction = model.predict([data])
     output = "Iris-setosa" if int(prediction[0])==0 else "Iris-versicolor" if int(prediction[0])==1 else "Iris-virginica"
-    return render_template('index.html', prediction_text=f'Predicted Value: {output}')
-    
+    #return render_template('index.html', prediction_text=f'Predicted Value: {output}')
+    return render_template('result.html', prediction=output)
 
 @app.route('/api/predict', methods=['POST']) 
 def predict_api(): 
